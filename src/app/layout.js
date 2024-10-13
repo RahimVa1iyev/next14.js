@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import Logo from "./_components/Logo";
+import Navigation from "./_components/Navigation";
+import "@/app/_styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-primary-950 text-primary-100 min-h-screen" >
+      <header>
+          <Logo />
+          <Navigation />
+        </header>
+        <main>{children}</main>
+        <footer>Copyright by The Wild Oasis</footer>
+      </body>
     </html>
   );
 }
